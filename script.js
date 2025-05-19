@@ -72,13 +72,13 @@ document.addEventListener('DOMContentLoaded', () => {
     
     elements.forEach((element, index) => {
         element.style.opacity = '0';
-        element.style.transform = 'translateY(30px)';
-        element.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-        element.style.transitionDelay = `${index * 0.1}s`;
+        element.style.transform = 'translateY(20px)'; // Lebih kecil agar terasa cepat
+        element.style.transition = 'opacity 0.3s ease, transform 0.3s ease'; // Durasi lebih cepat
+        element.style.transitionDelay = `${index * 0.05}s`; // Delay antar elemen lebih cepat
     });
     
-    // Trigger animation after a short delay
-    setTimeout(animateOnScroll, 100);
+    // Trigger animation setelah sedikit delay
+    setTimeout(animateOnScroll, 50);
 });
 
 // Sesuaikan padding top hero section berdasarkan tinggi header
@@ -96,4 +96,5 @@ function adjustHeroPadding() {
 window.addEventListener('load', adjustHeroPadding);
 window.addEventListener('resize', adjustHeroPadding);
 
+// Trigger animasi saat scroll
 window.addEventListener('scroll', animateOnScroll);
